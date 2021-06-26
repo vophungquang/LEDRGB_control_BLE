@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#673AB7"
+        android:orientation="horizontal">
+
+        <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="56dp"
+            android:layout_height="wrap_content"
+            android:minWidth="56dp">
+
+            <ProgressBar
+                android:id="@+id/scanning"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_gravity="center" />
+        </FrameLayout>
+
+        <Space
+            android:layout_width="80dp"
+            android:layout_height="match_parent" />
+
+        <Button
+            android:id="@+id/btnScan"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:text="Scan"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            app:backgroundTint="#FFFFFF" />
+
+        <Space
+            android:layout_width="10dp"
+            android:layout_height="match_parent" />
+
+        <Button
+            android:id="@+id/btnStop"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:text="Stop"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            app:backgroundTint="#FFFFFF" />
+    </LinearLayout>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ListView
+            android:id="@+id/listDevice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </ListView>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+</LinearLayout>

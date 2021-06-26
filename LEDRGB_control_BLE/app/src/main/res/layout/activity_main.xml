@@ -1,0 +1,441 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:orientation="vertical"
+    android:visibility="visible"
+    tools:visibility="visible"
+    android:background="#f1efef">
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:id="@+id/cardInformation"
+        app:cardBackgroundColor="#00a9ce"
+        app:cardCornerRadius="10dp"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/txtNameDevice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="NameDevice"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                />
+            <TextView
+                android:id="@+id/txtAddressDevice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Address"
+                android:textSize="20dp"
+                android:layout_below="@id/txtNameDevice"/>
+
+            <TextView
+                android:id="@+id/txtState"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="State:"
+                android:textSize="20dp"
+                android:layout_below="@id/txtAddressDevice"/>
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+
+
+
+    <Space
+        android:id="@+id/spaceControl"
+        android:layout_width="wrap_content"
+        android:layout_height="10dp"
+        android:layout_below="@id/cardInformation" />
+
+    <LinearLayout
+        android:id="@+id/Fcontrol"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_below="@+id/modeControl"
+        android:orientation="horizontal"
+        android:visibility="invisible">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" F"
+            android:textSize="30sp" />
+
+        <SeekBar
+            android:id="@+id/frequenceSb"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:max="990000" />
+
+
+    </LinearLayout>
+<androidx.cardview.widget.CardView
+    android:id="@+id/modeControl"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/spaceControl"
+    app:cardCornerRadius="5dp">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioGroup"
+            android:orientation="horizontal">
+                <RadioButton
+                    android:id="@+id/noHueBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Static" />
+                <RadioButton
+                    android:id="@+id/hueBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Auto Change" />
+                <RadioButton
+                    android:id="@+id/buttonOFF"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="OFF"
+                    android:textColor="@color/black"
+                    />
+        </RadioGroup>
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/seekbarsHolder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/modeControl"
+        android:layout_marginTop="50dp"
+        app:cardCornerRadius="10dp">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/buttonRED"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:background="@drawable/roundedbutton"
+                app:backgroundTint="#FF0505" />
+
+            <SeekBar
+                android:id="@+id/Redseekbar"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_toRightOf="@id/buttonRED"
+                android:max="255"
+                android:visibility="visible"
+                tools:visibility="visible" />
+
+            <Space
+                android:id="@+id/spaceRG"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:layout_below="@id/Redseekbar" />
+
+            <Button
+                android:id="@+id/buttonGREEN"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_below="@id/spaceRG"
+                android:layout_weight="1"
+                android:background="@drawable/greenroundedbutton"
+                app:backgroundTint="#0F0" />
+
+            <SeekBar
+                android:id="@+id/Greenseekbar"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_below="@id/spaceRG"
+
+                android:layout_toRightOf="@id/buttonGREEN"
+                android:max="255"
+                android:visibility="visible"
+                tools:visibility="visible" />
+
+            <Space
+                android:id="@+id/spaceGB"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:layout_below="@id/Greenseekbar" />
+
+            <Button
+                android:id="@+id/buttonBLUE"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_below="@id/spaceGB"
+                android:layout_weight="1"
+                android:background="@drawable/blueroundedbutton" />
+
+            <SeekBar
+                android:id="@+id/Blueseekbar"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_below="@id/spaceGB"
+                android:layout_toRightOf="@id/buttonBLUE"
+                android:max="255" />
+
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+    <TableLayout
+        android:id="@+id/colorList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/seekbarsHolder"
+        android:layout_marginTop="10dp"
+        android:visibility="visible"
+        android:weightSum="8">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="10dp">
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:background="#FF0000"
+                app:backgroundTint="#FF0000" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:background="#FF4000"
+                app:backgroundTint="#FF4000" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:background="#FF8000"
+                app:backgroundTint="#FF8000" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:background="#FFBF00"
+                app:backgroundTint="#FFBF00" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:background="#FFFF00"
+                app:backgroundTint="#FFFF00" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:background="#BFFF00"
+                app:backgroundTint="#BFFF00" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:background="#80FF00"
+                app:backgroundTint="#80FF00" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:background="#40FF00"
+                app:backgroundTint="#40FF00" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="10dp">
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:background="#0040FF"
+                app:backgroundTint="#0040FF" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:background="#0080FF"
+                app:backgroundTint="#0080FF" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:background="#00BFFF"
+                app:backgroundTint="#00BFFF" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:background="#00FFFF"
+                app:backgroundTint="#00FFFF" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:background="#00FFBF"
+                app:backgroundTint="#00FFBF" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:background="#00FF80"
+                app:backgroundTint="#00FF80" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:background="#00FF40"
+                app:backgroundTint="#00FF40" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:background="#00FF00"
+                app:backgroundTint="#00FF00" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="10dp">
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:background="#0000FF"
+                app:backgroundTint="#0000FF" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:background="#4000FF"
+                app:backgroundTint="#4000FF" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:background="#8000FF"
+                app:backgroundTint="#8000FF" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:background="#BF00FF"
+                app:backgroundTint="#BF00FF" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:background="#FF00FF"
+                app:backgroundTint="#FF00FF" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:background="#FF00BF"
+                app:backgroundTint="#FF00BF" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:background="#FF0080"
+                app:backgroundTint="#FF0080" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:background="#FF0040"
+                app:backgroundTint="#FF0040" />
+        </TableRow>
+    </TableLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/colorList"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Switch
+                android:id="@+id/ledStateSw"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" />
+
+            <Space
+                android:layout_width="10dp"
+                android:layout_height="match_parent" />
+
+            <EditText
+                android:id="@+id/durationtxt"
+                android:layout_width="150dp"
+                android:layout_height="match_parent"
+                android:hint="nhập giây"
+                android:inputType="numberDecimal"/>
+
+            <Space
+                android:layout_width="30dp"
+                android:layout_height="match_parent" />
+
+            <Button
+                android:id="@+id/startTimerbtn"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Start" />
+        </LinearLayout>
+
+        <ProgressBar
+            android:id="@+id/progress"
+            style="@android:style/Widget.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/connectButtonHolder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        >
+            <ToggleButton
+                android:id="@+id/btnOnOff"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/AppTheme.RoundedCornerMaterialButton"
+                android:checked="false"
+                android:textOn="Connect"
+                android:textOff="Disconnect"
+                android:textColor="@color/black"
+                app:backgroundTint="#ffffff"
+                app:iconTint="#ffffff"
+                />
+    </LinearLayout>
+
+
+</RelativeLayout>
